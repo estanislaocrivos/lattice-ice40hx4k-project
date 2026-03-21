@@ -4,7 +4,7 @@ Example blinky for the Lattice iCE40HX4K (TQ144) FPGA. Uses a fully open-source 
 
 ## Structure
 
-```
+```text
 ├── rtl/
 │   ├── top.v           # Verilog design
 │   └── top.vhd         # VHDL design (alternative)
@@ -64,7 +64,7 @@ rm -rf build
 
 ## Toolchain
 
-```
+```text
 top.v → [yosys] → top.json → [nextpnr-ice40] → top.asc → [icepack] → top.bin → [iceprog] → FPGA
 ```
 
@@ -81,7 +81,3 @@ top.v → [yosys] → top.json → [nextpnr-ice40] → top.asc → [icepack] →
 | btn2       | 32  |
 | btn3       | 33  |
 | btn4       | 34  |
-
-## License
-
-MIT
