@@ -1,0 +1,33 @@
+CAPI=2:
+name: local:lattice:blinky:1.0.0
+description: LED blinker for Lattice iCE40HX4K
+
+filesets:
+  rtl:
+    files:
+      - rtl/top.v
+    file_type: verilogSource
+
+  constraints:
+    files:
+      - data/top.pcf
+    file_type: PCF
+
+targets:
+  default: &default
+    filesets:
+      - rtl
+    toplevel: top
+
+  synth:
+    <<: *default
+    description: Synthesize and build bitstream for iCE40HX4K
+    default_tool: icestorm
+    filesets_append:
+      - constraints
+    tools:
+      icestorm:
+        nextpnr_options:
+          - --hx4k
+          - --package tq144
+        pnr: next

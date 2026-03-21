@@ -1,0 +1,13 @@
+# Build artifacts
+build/
+
+# Python virtual environment
+.venv/
+
+# Simulation dumps
+*.vcd
+
+# GHDL work library
+work-obj*.cf
+*.o
+e~*.lst
