@@ -1,6 +1,6 @@
 CAPI=2:
-name: local:lattice:blinky:1.0.0
-description: LED blinker for Lattice iCE40HX4K
+name: local:sandbox:lattice-ice40hx4k-project:0.1.0
+description: Copy-paste starter template for iCE40HX4K experiments
 
 filesets:
   rtl:
