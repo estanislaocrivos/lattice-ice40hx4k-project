@@ -1,15 +1,15 @@
-# Lattice iCE40HX4K TQ144
-# Clock
-set_io clk        94
+# Lattice iCE40HX4K TQ144 -- confirmed working pinout.
+# Uncomment/rename as needed when you add ports to rtl/top.v. Don't guess
+# pins that aren't listed here without checking the board's schematic first.
 
-# LEDs
-set_io led_green  1
-set_io led_red    2
-set_io led_yellow 3
-set_io led_blue   4
+set_io clock 94
 
-# Buttons
-set_io btn1       31
-set_io btn2       32
-set_io btn3       33
-set_io btn4       34
+set_io o_led 1
+# set_io led_red    2
+# set_io led_yellow 3
+# set_io led_blue   4
+
+# set_io btn1 31
+# set_io btn2 32
+# set_io btn3 33
+# set_io btn4 34

@@ -1,17 +1,21 @@
-module top(
-    input  clk,
-    output led_green,
-    output led_red,
-    output led_yellow,
-    output led_blue
+/* Placeholder design: confirms the toolchain works end-to-end on a fresh
+   copy of this template before you replace it with real RTL. Blinks the
+   first LED off a free-running counter. */
+
+module top #(
+    parameter NB_COUNTER = 24
+) (
+    output o_led,
+
+    input clock
 );
-    reg [23:0] counter = 0;
 
-    always @(posedge clk)
+    reg [NB_COUNTER-1:0] counter;
+
+    always @(posedge clock) begin
         counter <= counter + 1;
+    end
 
-    assign led_green  = counter[23]; // ~0.7 Hz
-    assign led_red    = counter[22]; // ~1.4 Hz
-    assign led_yellow = counter[21]; // ~2.8 Hz
-    assign led_blue   = counter[20]; // ~5.7 Hz
+    assign o_led = counter[NB_COUNTER-1];
+
 endmodule

@@ -2,7 +2,7 @@
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
-CORE_NAME="local:lattice:blinky:1.0.0"
+CORE_NAME="local:sandbox:lattice-ice40hx4k-project:0.1.0"
 BUILD_DIR="$PROJECT_DIR/build"
 
 for tool in yosys nextpnr-ice40 icepack; do
@@ -12,7 +12,7 @@ for tool in yosys nextpnr-ice40 icepack; do
     fi
 done
 
-source "$SCRIPT_DIR/activate_venv.sh"
+source "$SCRIPT_DIR/setup.sh"
 
 if [ -d "$BUILD_DIR" ]; then
     echo "Cleaning previous build ..."
@@ -23,7 +23,7 @@ echo "Building $CORE_NAME ..."
 cd "$PROJECT_DIR"
 fusesoc run --target=synth "$CORE_NAME"
 
-BITSTREAM="$BUILD_DIR/local_lattice_blinky_1.0.0/synth-icestorm/local_lattice_blinky_1.0.0.bin"
+BITSTREAM="$BUILD_DIR/local_sandbox_lattice-ice40hx4k-project_0.1.0/synth-icestorm/local_sandbox_lattice-ice40hx4k-project_0.1.0.bin"
 if [ -f "$BITSTREAM" ]; then
     echo "Build succeeded: $BITSTREAM"
 else
