@@ -99,3 +99,5 @@ rtl/top.v -> [yosys] -> netlist.json -> [nextpnr-ice40] -> top.asc -> [icepack] 
 | btn2       | 32  | available |
 | btn3       | 33  | available |
 | btn4       | 34  | available |
+
+Check the [board's pinout schematic](pinout-edu-fpga.png) for the rest of available pins.
